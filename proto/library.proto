@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "./pb";
+
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message LoginResponse {
+    string message = 1;
+    string token = 2;
+}
+
+service Auth {
+    rpc Login(LoginRequest) returns (LoginResponse);
+}
+
+message BorrowRequest {
+    int64 userId = 1;
+    int64 bookId = 2;
+    string borrowing_date = 3;
+}
+
+message BorrowResponse {
+    int64 userId = 1;
+    int64 bookId = 2;
+    string borrowing_date = 3;
+}
+
+message ReturnRequest {
+    int64 borrowRecordId = 1;
+}
+
+message ReturnResponse {
+    int64 userId = 1;
+    int64 bookId = 2;
+    string returning_date = 3;
+}
+
+service Borrow {
+    rpc Borrow(BorrowRequest) returns (BorrowResponse);
+    rpc Return(ReturnRequest) returns (ReturnResponse);
+}
+
