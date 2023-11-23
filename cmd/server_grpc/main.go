@@ -10,12 +10,12 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/adityatresnobudi/library-api/db"
-	handler "github.com/adityatresnobudi/library-api/handler/handler_grpc"
-	"github.com/adityatresnobudi/library-api/interceptor"
+	"github.com/adityatresnobudi/library-api/internal/db"
+	handler "github.com/adityatresnobudi/library-api/internal/handler/handler_grpc"
+	"github.com/adityatresnobudi/library-api/internal/interceptor"
 	"github.com/adityatresnobudi/library-api/proto/pb"
-	"github.com/adityatresnobudi/library-api/repository"
-	"github.com/adityatresnobudi/library-api/usecase"
+	"github.com/adityatresnobudi/library-api/internal/repository"
+	"github.com/adityatresnobudi/library-api/internal/usecase"
 	"google.golang.org/grpc"
 )
 
