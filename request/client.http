@@ -1,0 +1,52 @@
+proto < ./../proto/library.proto
+@host=http://localhost:50051
+@token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJMaWJyYXJ5IiwiZXhwIjoxNjk3NDMzNTA3LCJpYXQiOjE2OTc0Mjk5MDcsImlkIjoyfQ.w1cOr2XA7_at6gwKIlXXEuoXEFJ8FnM0bViaG09ybH4
+
+### Login Success
+GRPC {{host}}/auth.Auth/Login
+{
+  "email": "natnat@xyz.com",
+  "password": "natnat"
+}
+
+### Login Failed
+GRPC {{host}}/auth.Auth/Login
+{
+  "email": "abc@xyz.com",
+  "password": "abc"
+}
+
+### Borrow Success
+GRPC {{host}}/auth.Borrow/Borrow
+authorization: {{token}}
+{
+  "userId":"2",
+  "bookId":"2",
+  "borrowing_date":"2023-06-14 20:00:00"
+}
+
+### Borrow Failed
+GRPC {{host}}/auth.Borrow/Borrow
+authorization: {{token}}
+{
+  "userId":"2",
+  "bookId":"9",
+  "borrowing_date":"2023-06-14"
+}
+
+### Borrow Failed
+GRPC {{host}}/auth.Borrow/Borrow
+authorization: {{token}}
+{
+  "userId":"2",
+  "borrowing_date":"2023-06-14"
+}
+
+### Borrow Failed
+GRPC {{host}}/auth.Borrow/Borrow
+authorization: aaaaa
+{
+  "userId":"2",
+  "bookId":"2",
+  "borrowing_date":"2023-06-14"
+}
