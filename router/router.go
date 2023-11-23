@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/adityatresnobudi/library-api/db"
-	"github.com/adityatresnobudi/library-api/handler"
+	handler "github.com/adityatresnobudi/library-api/handler/handler_rest"
 	"github.com/adityatresnobudi/library-api/logger"
 	"github.com/adityatresnobudi/library-api/middleware"
 	"github.com/adityatresnobudi/library-api/repository"

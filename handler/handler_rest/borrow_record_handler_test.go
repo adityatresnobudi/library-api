@@ -1,4 +1,4 @@
-package handler_test
+package handlerrest_test
 
 import (
 	"encoding/json"
@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/adityatresnobudi/library-api/dto"
-	"github.com/adityatresnobudi/library-api/handler"
+	handler "github.com/adityatresnobudi/library-api/handler/handler_rest"
 	"github.com/adityatresnobudi/library-api/mocks"
 	"github.com/adityatresnobudi/library-api/router"
 	"github.com/adityatresnobudi/library-api/shared"

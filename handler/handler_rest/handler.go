@@ -1,4 +1,4 @@
-package handler
+package handlerrest
 
 import "github.com/adityatresnobudi/library-api/usecase"
 
